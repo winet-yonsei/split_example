@@ -5,12 +5,6 @@ from common import *
 if __name__ == "__main__":
     parser = Parser
     parser.add_argument(
-        '--out_data',
-        type=str,
-        default='./layer1_out.bin',
-        help="Input data csv"
-    )
-    parser.add_argument(
         '--model1_path',
         type=str,
         default='./layer1',
@@ -24,6 +18,7 @@ if __name__ == "__main__":
 
     if args.model1_path is not None:
         model.load_state_dict(torch.load(args.model1_path))
+
     input_data = load_data(args.data)
     out = model(input_data[0])
-    save_data(args.out_data, out)
+    save_data(args.out_path, out)

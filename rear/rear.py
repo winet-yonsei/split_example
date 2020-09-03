@@ -39,7 +39,7 @@ if __name__ == "__main__":
     input_data = input_data.reshape(input_data.size(0), -1)
     out = fc(input_data)
 
-    save_data(args.out_data, out)
+    save_data(args.out_path, out)
     output = torch.argmax(out, 1)
 
     input_image = load_data(args.image)

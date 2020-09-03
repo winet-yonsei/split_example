@@ -1,12 +1,16 @@
 import pickle
 import argparse
 import torch.nn as nn
+import io
 
 
 def load_data(data_path):
     with open(data_path, 'rb') as f:
         out = pickle.load(f)
     return out
+# def load_data(data):
+#     d = io.BytesIO(data)
+#     return pickle.loads(d)
 
 
 def save_data(data_path, data):
@@ -38,7 +42,7 @@ Parser.add_argument(
 Parser.add_argument(
     '--batch',
     type=int,
-    default=1000,
+    default=100,
     help="batch size"
 )
 

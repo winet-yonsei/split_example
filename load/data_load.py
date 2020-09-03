@@ -12,12 +12,6 @@ if __name__ == "__main__":
         default=0,
         help="index"
     )
-    parser.add_argument(
-        '--out_path',
-        type=str,
-        default="./output.bin",
-        help="output file path"
-    )
     args = parser.parse_args()
     batch_size = args.batch
     transform = T.Compose([T.ToTensor(), T.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
