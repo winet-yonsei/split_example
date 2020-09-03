@@ -14,7 +14,7 @@ def ty_pipeline():
         arguments=[
             '--train', 'false',
             '--out_path', '/image.bin',
-            '--batch', 1
+            '--batch', '1'
         ],
         file_outputs={'image': '/image.bin'}
     )
@@ -25,7 +25,7 @@ def ty_pipeline():
             '--data', image_load.outputs['image'],
             '--train', 'false',
             '--out_path', '/layer1.bin',
-            '--batch', 1
+            '--batch', '1'
         ],
         file_outputs={'layer1': '/layer1.bin'}
     )
@@ -36,7 +36,7 @@ def ty_pipeline():
             '--data', layer1.outputs['layer1'],
             '--train', 'false',
             '--out_path', '/layer2.bin',
-            '--batch', 1
+            '--batch', '1'
         ],
         file_outputs={'layer2': '/layer2.bin'}
     )
@@ -48,7 +48,7 @@ def ty_pipeline():
             '--train', 'false',
             '--out_path', '/fc_out.bin',
             '--image', image_load.outputs['image'],
-            '--batch', 1
+            '--batch', '1'
         ],
         file_outputs={'fc_out': '/fc_out.bin'}
     )
