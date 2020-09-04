@@ -1,4 +1,4 @@
-FROM python:3
+FROM pytorch/pytorch:latest
 ENV PYTHONBUFFERED 1
 RUN mkdir /code
 WORKDIR /code
